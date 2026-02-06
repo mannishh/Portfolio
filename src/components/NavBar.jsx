@@ -49,14 +49,9 @@ const NavBar = ({
                   activeSection === item
                     ? "text-blue-400"
                     : "text-gray-300 hover:text-white"
-                }`}
+                } transform-gpu`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`capitalize cursor-pointer ${
-                  activeSection === item
-                    ? "text-blue-400"
-                    : "text-gray-300 hover:text-white"
-                } transform-gpu`}
                 style={{ willChange: "transform" }}
               >
                 {item}
@@ -110,14 +105,9 @@ const NavBar = ({
                   activeSection === item
                     ? "text-blue-400"
                     : "text-gray-300 hover:text-white"
-                }`}
+                } transform-gpu`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`capitalize ${
-                  activeSection === item
-                    ? "text-blue-400"
-                    : "text-gray-300 hover:text-white"
-                } transform-gpu`}
                 style={{ willChange: "transform" }}
               >
                 {item}
