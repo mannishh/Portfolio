@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa6";
-import profileImage from "../image/pp.jpg";
+import profileImage from "../assets/pp.jpg";
 
 const HeroSection = ({ containerVariants, itemVariants }) => {
   const codeString = "<Manish Hengaju/>";
