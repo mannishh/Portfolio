@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import portfolioImage from "../assets/portfolio.avif"
+import portfolioImage from "../assets/portfolio.avif";
 
 const About = ({ containerVariants, itemVariants }) => {
   return (
-    <section id="about" className="py-20 bg-gray-900/50">
+    <section id="about" className="py-20 bg-gray-900/50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,19 +42,26 @@ const About = ({ containerVariants, itemVariants }) => {
               viewport={{ once: true }}
             >
               <motion.div
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-2 transform-gpu"
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.03,
+                  transition: { type: "spring", stiffness: 120, damping: 16 },
+                }}
+                style={{ willChange: "transform" }}
               >
                 {/* <span>5+ Years Experience</span> */}
               </motion.div>
 
               <motion.div
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-2 transform-gpu"
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-              > 
-              </motion.div>
+                whileHover={{
+                  scale: 1.03,
+                  transition: { type: "spring", stiffness: 120, damping: 16 },
+                }}
+                style={{ willChange: "transform" }}
+              ></motion.div>
             </motion.div>
           </div>
           <motion.div

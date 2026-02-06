@@ -1,14 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import ExperienceData from './data/ExperienceData';
+import React from "react";
+import { motion } from "framer-motion";
+import ExperienceData from "./data/ExperienceData";
 import { LuBuilding2 } from "react-icons/lu";
 import { LuMapPin } from "react-icons/lu";
 import { CiCalendar } from "react-icons/ci";
 import { FiAward } from "react-icons/fi";
 
-const Experience = ({containerVariants, itemVariants}) => {
+const Experience = ({ containerVariants, itemVariants }) => {
   return (
-    <section className="py-20">
+    <section className="py-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ const Experience = ({containerVariants, itemVariants}) => {
             className="absolute left-8 top-0 w-0.5 h-full bg-blue-400/20"
             style={{ transition: "height 1s ease-out" }}
           />
-          
+
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -48,22 +48,25 @@ const Experience = ({containerVariants, itemVariants}) => {
                   viewport={{ once: true }}
                   className="absolute left-8 top-0 w-4 h-4 rounded-full bg-blue-400 transform -translate-x-1/2"
                   style={{
-                    boxShadow: "0 0 0 8px rgba(59, 130, 246, 0.1)"
+                    boxShadow: "0 0 0 8px rgba(59, 130, 246, 0.1)",
                   }}
                 />
-                
+
                 <motion.div
-                  className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors"
+                  className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors transform-gpu"
+                  style={{ willChange: "transform", transformOrigin: "center" }}
                   whileHover={{
-                    scale: 1.02,
-                    transition: { type: "spring", stiffness: 300 }
+                    scale: 1.01,
+                    transition: { type: "spring", stiffness: 120, damping: 18 },
                   }}
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
                         <LuBuilding2 className="w-5 h-5 text-blue-400" />
-                        <h3 className="text-xl font-bold text-blue-400">{exp.title}</h3>
+                        <h3 className="text-xl font-bold text-blue-400">
+                          {exp.title}
+                        </h3>
                       </div>
                       <div className="flex items-center gap-2 text-gray-400 mb-1">
                         <span className="font-semibold">{exp.company}</span>
@@ -78,7 +81,7 @@ const Experience = ({containerVariants, itemVariants}) => {
                         <span>{exp.period}</span>
                       </div>
                       <p className="text-gray-300 mb-4">{exp.description}</p>
-                      
+
                       <div className="space-y-4">
                         <motion.div
                           variants={containerVariants}
@@ -91,12 +94,14 @@ const Experience = ({containerVariants, itemVariants}) => {
                               className="flex items-start gap-2"
                             >
                               <FiAward className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
-                              <span className="text-gray-300">{achievement}</span>
+                              <span className="text-gray-300">
+                                {achievement}
+                              </span>
                             </motion.div>
                           ))}
                         </motion.div>
-                        
-                        <motion.div 
+
+                        <motion.div
                           className="flex flex-wrap gap-2 mt-4"
                           variants={containerVariants}
                         >
@@ -104,8 +109,16 @@ const Experience = ({containerVariants, itemVariants}) => {
                             <motion.span
                               key={i}
                               variants={itemVariants}
-                              whileHover={{ scale: 1.1 }}
-                              className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm"
+                              whileHover={{
+                                scale: 1.05,
+                                transition: {
+                                  type: "spring",
+                                  stiffness: 120,
+                                  damping: 16,
+                                },
+                              }}
+                              className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm transform-gpu"
+                              style={{ willChange: "transform" }}
                             >
                               {tech}
                             </motion.span>
@@ -121,7 +134,7 @@ const Experience = ({containerVariants, itemVariants}) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Experience;

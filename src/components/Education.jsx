@@ -6,7 +6,7 @@ import { CiCalendar } from "react-icons/ci";
 
 const Education = ({ containerVariants, itemVariants }) => {
   return (
-    <section className="py-20 bg-gray-900/50">
+    <section className="py-20 bg-gray-900/50 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -27,10 +27,15 @@ const Education = ({ containerVariants, itemVariants }) => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors"
+              className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors transform-gpu"
+              style={{
+                willChange: "transform",
+                transformOrigin: "center",
+                backfaceVisibility: "hidden",
+              }}
               whileHover={{
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 300 },
+                scale: 1.01,
+                transition: { type: "spring", stiffness: 120, damping: 18 },
               }}
             >
               <div className="flex items-start gap-4">

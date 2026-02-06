@@ -9,7 +9,7 @@ const HeroSection = ({ containerVariants, itemVariants }) => {
   const codeString = "<Manish Hengaju/>";
 
   return (
-    <section className="pt-32 pb-20 px-4">
+    <section className="pt-32 pb-20 px-4 overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex items-center justify-around flex-col-reverse md:flex-row">
         {/* Left Side: Text & Code Snippet */}
         <motion.div
@@ -84,13 +84,14 @@ const HeroSection = ({ containerVariants, itemVariants }) => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transform"
+                className="hover:text-blue-400 transform-gpu"
                 variants={itemVariants}
                 whileHover={{
-                  scale: 1.2,
-                  rotate: 360,
-                  transition: { duration: 0.5 },
+                  scale: 1.08,
+                  rotate: 8,
+                  transition: { duration: 0.28 },
                 }}
+                style={{ willChange: "transform" }}
               >
                 {item.icon}
               </motion.a>
@@ -132,7 +133,8 @@ const HeroSection = ({ containerVariants, itemVariants }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        whileHover={{ y: [0, -8, 0] }}
+        whileHover={{ y: [0, -6, 0] }}
+        style={{ willChange: "transform" }}
       >
         <FaChevronDown className="animate-bounce" size={24} />
       </motion.div>

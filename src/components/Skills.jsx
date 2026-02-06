@@ -4,7 +4,7 @@ import SkillsData from "./data/SkillsData";
 
 const Skills = ({ containerVariants, itemVariants }) => {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -26,10 +26,11 @@ const Skills = ({ containerVariants, itemVariants }) => {
               <motion.div
                 key={category}
                 variants={itemVariants}
-                className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors"
+                className="bg-gray-800/30 rounded-2xl p-8 hover:bg-gray-800/40 transition-colors transform-gpu"
+                style={{ willChange: "transform", transformOrigin: "center" }}
                 whileHover={{
-                  scale: 1.02,
-                  transition: { type: "spring", stiffness: 300 },
+                  scale: 1.01,
+                  transition: { type: "spring", stiffness: 120, damping: 18 },
                 }}
               >
                 <h3 className="text-2xl font-semibold mb-8 text-center text-blue-400">
@@ -44,10 +45,15 @@ const Skills = ({ containerVariants, itemVariants }) => {
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{
-                        scale: 1.1,
-                        transition: { type: "spring", stiffness: 400 },
+                        scale: 1.04,
+                        transition: {
+                          type: "spring",
+                          stiffness: 120,
+                          damping: 16,
+                        },
                       }}
-                      className="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all group"
+                      className="flex flex-col items-center justify-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/50 transition-all group transform-gpu"
+                      style={{ willChange: "transform" }}
                     >
                       <div className="text-gray-400 group-hover:text-blue-400 transition-colors mb-3">
                         {skill.icon}
