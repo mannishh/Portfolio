@@ -22,10 +22,12 @@ const Project = ({ containerVariants, itemVariants }) => {
           viewport={{ once: true }}
         >
           {ProjectsData.map((project, index) => (
+            
             <motion.div
               key={index}
               variants={itemVariants}
               className="bg-gray-800 rounded-lg overflow-hidden"
+              
               whileHover={{
                 scale: 1.05,
                 transition: { type: "spring", stiffness: 300 },

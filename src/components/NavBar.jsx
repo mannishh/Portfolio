@@ -45,7 +45,7 @@ const NavBar = ({
                 key={item}
                 variants={itemVariants}
                 onClick={() => handleScroll(item)}
-                className={`capitalize ${
+                className={`capitalize cursor-pointer ${
                   activeSection === item
                     ? "text-blue-400"
                     : "text-gray-300 hover:text-white"

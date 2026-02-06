@@ -4,9 +4,9 @@ import EducationData from "./data/EducationData";
 import { FaGraduationCap } from "react-icons/fa6";
 import { CiCalendar } from "react-icons/ci";
 
-const Education = ({containerVariants, itemVariants}) => {
+const Education = ({ containerVariants, itemVariants }) => {
   return (
-    <section  className="py-20 bg-gray-900/50">
+    <section className="py-20 bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -34,17 +34,9 @@ const Education = ({containerVariants, itemVariants}) => {
               }}
             >
               <div className="flex items-start gap-4">
-                <motion.div
-                  animate={{ rotate: [0, 360] }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="bg-blue-500/20 p-3 rounded-full"
-                >
+                <div className="bg-blue-500/20 p-3 rounded-full">
                   <FaGraduationCap className="w-6 h-6 text-blue-400" />
-                </motion.div>
+                </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
                     <h3 className="text-xl font-bold text-blue-400">

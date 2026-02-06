@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import portfolioImage from "../assets/portfolio.avif"
 
 const About = ({ containerVariants, itemVariants }) => {
   return (
@@ -64,7 +65,7 @@ const About = ({ containerVariants, itemVariants }) => {
             viewport={{ once: true }}
           >
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800"
+              src={portfolioImage}
               alt="Developer workspace"
               className="rounded-lg shadow-xl"
             />

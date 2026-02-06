@@ -12,16 +12,19 @@ const Education = [
   //   ],
   // },
   {
-    degree: "Bachelor in Computer Application",
+    degree: "Bachelor in Computer Application (BCA)",
     college: "Bhaktapur Multiple Campus",
-    year: "Running",
-    description:
-      "Focus on Full-Stack Development and Software Architecture.",
+    year: "2026",
     // achievements: [
     //   "Dean's List",
     //   "Hackathon Winner",
     //   "Computer Science Club President",
     // ],
+  },
+  {
+    degree: "High School/ +2 (Science) level",
+    college: "Basu Higher Secondary School",
+    year: "2019",
   },
 ];
 
