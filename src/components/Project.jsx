@@ -23,7 +23,7 @@ const Project = ({ containerVariants, itemVariants }) => {
         >
           {ProjectsData.map((project, index) => (
             <a
-              href="https://online-job-portal-xn31.vercel.app/"
+              href={project.link}
               target="_blank"
               rel="noopener noreferrer"
             >
